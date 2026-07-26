@@ -69,7 +69,7 @@ Data is broadly categorized by how strictly it follows a schema. Structured data
 
 ![photo](resources/lab1/photo.jpg "Sunset")
 
-### [photo.jpg](resources/lab1/photo.jpg)(Un-structured)
+### [photo.jpg](resources/lab1/theater.mp4)(Un-structured)
 <video width="600" controls>
   <source src="/resources/lab1/theater.mp4" type="video/mp4">
   Your browser does not support the video tag.
