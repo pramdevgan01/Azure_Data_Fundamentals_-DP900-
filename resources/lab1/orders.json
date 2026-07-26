@@ -1,0 +1,38 @@
+[
+  {
+    "orderId": 5001,
+    "customer": "Aarav Sharma",
+    "city": "Pune",
+    "items": [
+      { "sku": "A10", "qty": 2 }
+    ],
+    "giftWrap": true
+  },
+  {
+    "orderId": 5002,
+    "customer": "Diya Verma",
+    "city": "Bengaluru",
+    "items": [
+      { "sku": "B21", "qty": 1 },
+      { "sku": "C15", "qty": 3 }
+    ],
+    "paymentMode": "UPI"
+  },
+  {
+    "orderId": 5003,
+    "customer": "Rohan Mehta",
+    "items": [
+      { "sku": "A10", "qty": 1, "color": "Black" }
+    ],
+    "giftWrap": false,
+    "expressDelivery": true
+  },
+  {
+    "orderId": 5004,
+    "customer": "Ananya Iyer",
+    "city": "Chennai",
+    "items": [
+      { "sku": "D07", "qty": 5 }
+    ]
+  }
+]

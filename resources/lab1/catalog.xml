@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+    <product id="A10">
+        <name>Wireless Mouse</name>
+        <price>499</price>
+        <brand>Zebronics</brand>
+    </product>
+    <product id="B21">
+        <name>Mechanical Keyboard</name>
+        <price>2199</price>
+        <brand>Ant Esports</brand>
+        <color>Black</color>
+    </product>
+    <product id="C15">
+        <name>USB-C Cable</name>
+        <price>249</price>
+    </product>
+    <product id="D07">
+        <name>Laptop Stand</name>
+        <price>899</price>
+        <brand>Portronics</brand>
+        <material>Aluminium</material>
+    </product>
+</catalog>

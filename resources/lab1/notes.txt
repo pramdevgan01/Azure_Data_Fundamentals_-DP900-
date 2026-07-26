@@ -1,0 +1,15 @@
+Meeting notes - Orientation Week
+
+Spoke with Aarav Sharma and Diya Verma today about the new student onboarding
+process for the AIML batch. They mentioned that a few students, including
+Rohan Mehta, are still waiting for their hostel allotment letters.
+
+Ananya Iyer suggested we set up a WhatsApp group for the CSE branch so that
+notices about lab schedules can be shared quickly. Kabir Singh volunteered
+to be the class representative for ECE.
+
+Reminder: Library orientation is scheduled for next Monday. Bring your ID
+cards. Lab coats are mandatory for the AIML practical sessions starting
+from the second week.
+
+No fixed format here - just free-flowing text, unlike the CSV or JSON files.
