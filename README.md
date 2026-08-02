@@ -7,10 +7,12 @@ A hands-on lab manual for the **Microsoft Certified: Azure Data Fundamentals (DP
 ```
 DP_900/
 ├── Lab1.md              # Experiment 1
-├── Lab2.md              # Experiment 2 (WIP)
+├── Lab2.md              # Experiment 2
+├── Lab3.md              # Experiment 3
 ├── resources/
 │   ├── lab1/            # Sample data files used in Experiment 1
-│   └── lab2/            # Sample data files used in Experiment 2
+│   ├── lab2/            # Sample data files used in Experiment 2
+│   └── lab3/            # Sample data files used in Experiment 3
 ├── images/              # Diagrams / screenshots referenced by labs
 └── README.md
 ```
@@ -31,10 +33,11 @@ Each `LabN.md` follows a consistent format:
 | # | Experiment | Status |
 |---|------------|--------|
 | 1 | [Classify Datasets as Structured, Semi-Structured, or Unstructured](Lab1.md) | ✅ Complete |
-| 2 | Experiment 2 | 🚧 In progress |
-| 3–10 | Experiments 3–10 | 🚧 Planned |
+| 2 | [Compare Transactional vs Analytical Workloads Using Sample Scenarios](Lab2.md) | ✅ Complete |
+| 3 | [Load CSV and JSON Files into a Local Environment and Analyze Structure](Lab3.md) | ✅ Complete |
+| 4–10 | Experiments 4–10 | 🚧 Planned |
 
-> **Note:** `Lab2.md`–`Lab10.md` are currently listed in [`.gitignore`](.gitignore) while under development and are not yet tracked in this repository.
+> **Note:** `Lab4.md`–`Lab10.md` are currently listed in [`.gitignore`](.gitignore) while under development and are not yet tracked in this repository.
 
 ## How to Use
 

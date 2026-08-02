@@ -1,0 +1,43 @@
+[
+  {
+    "empId": "E101",
+    "name": "Aarav Sharma",
+    "department": "Engineering",
+    "salary": 650000,
+    "address": { "city": "Pune", "state": "Maharashtra" },
+    "skills": ["Python", "Azure", "SQL"]
+  },
+  {
+    "empId": "E102",
+    "name": "Diya Verma",
+    "department": "Marketing",
+    "salary": 520000,
+    "address": { "city": "Bengaluru", "state": "Karnataka" },
+    "skills": ["SEO", "Content Strategy"]
+  },
+  {
+    "empId": "E103",
+    "name": "Rohan Mehta",
+    "department": "Engineering",
+    "salary": 700000,
+    "address": { "city": "Hyderabad", "state": "Telangana" },
+    "skills": ["Java", "Kubernetes"],
+    "certifications": ["AZ-900", "AZ-104"]
+  },
+  {
+    "empId": "E104",
+    "name": "Ananya Iyer",
+    "department": "Sales",
+    "salary": 480000,
+    "address": { "city": "Chennai", "state": "Tamil Nadu" },
+    "skills": ["Negotiation", "CRM"]
+  },
+  {
+    "empId": "E105",
+    "name": "Kabir Singh",
+    "department": "HR",
+    "salary": 450000,
+    "address": { "city": "Delhi", "state": "Delhi" },
+    "skills": ["Recruitment"]
+  }
+]
