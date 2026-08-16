@@ -1,0 +1,136 @@
+-- CONSTRAINTS: (PK, FK, UNIQUE, CHECK, DEFAULT, NOT NULL);
+
+-- 1. PRIMARY KEY:
+
+DESC membershiptiers;
+ALTER TABLE membershiptiers DROP PRIMARY KEY;
+DESC membershiptiers;
+ALTER TABLE membershiptiers ADD CONSTRAINT PRIMARY KEY (TierName);
+DESC membershiptiers;
+
+
+-- 2. FK: 
+DESC movies;
+DESC genres;
+
+ALTER TABLE movies
+DROP CONSTRAINT fk_movies_genres;
+
+ALTER TABLE movies
+DROP FOREIGN KEY fk_movies_genres;
+
+ALTER TABLE movies
+    ADD CONSTRAINT fk_movies_genres
+    FOREIGN KEY (GenreID) REFERENCES genres (GenreID)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE;
+
+DESC genres;
+
+ALTER TABLE movies
+    ADD CONSTRAINT fk_movies_directors
+    FOREIGN KEY (DirectorID) REFERENCES directors (DirectorID)
+    ON DELETE SET NULL;
+
+
+ALTER TABLE Rentals
+    ADD CONSTRAINT FK_Rentals_Movies
+    FOREIGN KEY (MovieID) REFERENCES Movies(MovieID);
+
+ALTER TABLE Rentals
+    ADD CONSTRAINT FK_Rentals_Customers
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID);
+-- Deliberately NOT ON DELETE CASCADE: deleting a member must not erase their
+-- rental history and with it the revenue figures.
+
+ALTER TABLE Reviews
+    ADD CONSTRAINT FK_Reviews_Movies
+    FOREIGN KEY (MovieID) REFERENCES Movies(MovieID);
+
+ALTER TABLE Reviews
+    ADD CONSTRAINT FK_Reviews_Customers
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID);
+
+ALTER TABLE Staff
+    ADD CONSTRAINT FK_Staff_Manager
+    FOREIGN KEY (ManagerID) REFERENCES Staff(StaffID);   -- self-referencing
+
+DESC movies;
+
+-- 3. UNIQUE
+-- Customers (Email) ---> Unique
+ALTER TABLE Customers
+    ADD CONSTRAINT uq_customers_email UNIQUE (Email);
+
+ALTER TABLE Reviews
+    ADD CONSTRAINT uq_reviews_customer_movie 
+    UNIQUE(CustomerID, MovieID);
+
+-- CHECK 
+ALTER TABLE Reviews
+    ADD CONSTRAINT ck_review_score 
+    CHECK (Score BETWEEN 1 AND 10);
+
+-- 1888 to 2100
+ALTER TABLE Movies
+    ADD CONSTRAINT ck_movies_releaseYear 
+    CHECK (ReleaseYear BETWEEN 1888  AND 2100);
+
+ALTER TABLE Rentals
+    ADD CONSTRAINT ck_rental_dates
+    CHECK (ReturnDate IS NULL OR ReturnDate >= RentalDate);
+
+
+-- DEFAULT
+ALTER TABLE Customers 
+ALTER COLUMN JoinDate SET DEFAULT (CURRENT_DATE);
+
+ALTER TABLE Customers 
+ALTER COLUMN MembershipTier SET DEFAULT 'Silver';
+
+-- NOT NULL
+ALTER TABLE Movies
+MODIFY COLUMN Title VARCHAR(250) NOT NULL;
+
+ALTER TABLE Customers
+MODIFY COLUMN FullName VARCHAR(100) NOT NULL;
+
+
+SELECT CONSTRAINT_NAME, CONSTRAINT_TYPE
+FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS 
+WHERE TABLE_SCHEMA = 'db_44xh5ngsf' 
+    AND  TABLE_NAME='Customers';
+
+SELECT CONSTRAINT_NAME, CHECK_CLAUSE
+FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS 
+WHERE CONSTRAINT_SCHEMA = 'db_44xh5ngsf' 
+
+
+
+SELECT 
+    tc.CONSTRAINT_NAME,
+    tc.CONSTRAINT_TYPE,
+    tc.TABLE_NAME,
+    kcu.COLUMN_NAME,
+    kcu.REFERENCED_TABLE_NAME,
+    kcu.REFERENCED_COLUMN_NAME,
+    c.IS_NULLABLE,
+    c.COLUMN_DEFAULT,
+    c.DATA_TYPE,
+    c.CHARACTER_MAXIMUM_LENGTH,
+    cc.CHECK_CLAUSE
+FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS tc
+LEFT JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE kcu
+       ON tc.CONSTRAINT_NAME = kcu.CONSTRAINT_NAME
+      AND tc.TABLE_SCHEMA = kcu.TABLE_SCHEMA
+      AND tc.TABLE_NAME = kcu.TABLE_NAME
+LEFT JOIN INFORMATION_SCHEMA.COLUMNS c
+       ON tc.TABLE_SCHEMA = c.TABLE_SCHEMA
+      AND tc.TABLE_NAME = c.TABLE_NAME
+      AND kcu.COLUMN_NAME = c.COLUMN_NAME
+LEFT JOIN INFORMATION_SCHEMA.CHECK_CONSTRAINTS cc
+       ON tc.CONSTRAINT_NAME = cc.CONSTRAINT_NAME
+      AND tc.CONSTRAINT_SCHEMA = cc.CONSTRAINT_SCHEMA
+WHERE tc.TABLE_SCHEMA = 'db_44xh5ngsf'
+  AND tc.TABLE_NAME   = 'Customers'
+ORDER BY tc.CONSTRAINT_TYPE, kcu.COLUMN_NAME;
