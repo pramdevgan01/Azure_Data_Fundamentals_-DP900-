@@ -1,3 +1,6 @@
 {
-  "3296253": "3296253-DDL.sql"
+  "3296253": "Private queries/AIML-1/3296253-DDL.sql",
+  "3296264": "Private queries/AIML-1/3296264-CONSTRAINTS.sql",
+  "3296268": "Private queries/AIML-1/3296268-DQL.sql",
+  "3296267": "Private queries/AIML-1/3296267-DML.sql"
 }
