@@ -78,4 +78,4 @@ WHERE EXISTS(
 SELECT 2 FROM Movies ;
 
 
-SELECT * Movies;
+SELECT * FROM Movies;
