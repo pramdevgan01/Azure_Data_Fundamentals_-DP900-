@@ -38,7 +38,7 @@ Each `LabN.md` follows a consistent format:
 | 1 | [Classify Datasets as Structured, Semi-Structured, or Unstructured](Lab1.md) | ✅ Complete |
 | 2 | [Compare Transactional vs Analytical Workloads Using Sample Scenarios](Lab2.md) | ✅ Complete |
 | 3 | [Load CSV and JSON Files into a Local Environment and Analyze Structure](Lab3.md) | ✅ Complete |
-| 4 | Create Tables and Perform Basic SQL Queries in Azure SQL Database | 🚧 In progress |
+| 4 | [Create Tables and Perform Basic SQL Queries in Azure SQL Database](Lab4.md) | 🚧 In progress |
 | 5–10 | Experiments 5–10 | 🚧 Planned |
 
 > **Note:** `Lab4.md`–`Lab10.md` are currently listed in [`.gitignore`](.gitignore) while under development and are not yet tracked in this repository.
